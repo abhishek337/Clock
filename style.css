@@ -1,0 +1,101 @@
+*, ::after, ::before{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+body{
+	background-color: blueviolet;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	overflow: hidden;
+	min-height: 100vh;
+}
+
+.clock{
+	background-color: skyblue;
+	border-radius: 50%;
+	border: 5px solid red;
+	position: relative;
+	height: 600px;
+	width: 600px;
+	margin: auto;
+}
+
+h3{
+	position:absolute;
+	top: 20%;
+	left: 45%;
+	z-index: 9;
+}
+
+.clock .number {
+  --rot: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transform: rotate(var(--rot));
+  font-size: 2rem;
+  color: black;
+}
+
+.clock .one { --rot : 30deg;}
+.clock .two { --rot : 60deg;}
+.clock .three { --rot : 90deg;}
+.clock .four { --rot : 120deg;}
+.clock .five { --rot : 150deg;}
+.clock .six { --rot : 180deg;}
+.clock .seven { --rot : 210deg;}
+.clock .eight { --rot : 240deg;}
+.clock .nine { --rot : 270deg;}
+.clock .ten { --rot : 300deg;}
+.clock .eleven { --rot : 330deg;}
+.clock .twelve { --rot : 360deg;}
+
+.clock .hand{
+	--rotation = 0;
+	position: absolute;
+	bottom: 50%;
+	left: 50%;
+	z-index: 10;
+	border: 1px solid black;
+  	border-top-left-radius: 10px;
+  	border-top-right-radius: 10px;
+	transform-origin: bottom;
+	transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+}
+
+.clock::after{
+	content: "";
+	position: absolute;
+	width: 18px;
+	height: 18px;
+	top: 50%;
+	left: 50%;
+	background-color: crimson;
+	z-index: 11;
+	border: 2px solid black;
+	border-radius: 50%;
+	transform: translate(-50% , -50%);
+}
+
+.clock .hand.hour{
+	width: 10px;
+	height: 25%;
+	background-color: coral;
+}
+
+.clock .hand.minutes{
+	width: 8px;
+	height: 30%;
+	background-color: firebrick;
+}
+
+.clock .hand.seconds{
+	width: 4px;
+	height: 35%;
+	background-color: greenyellow;
+}
+
